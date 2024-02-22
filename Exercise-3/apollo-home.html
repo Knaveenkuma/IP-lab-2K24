@@ -1,0 +1,74 @@
+<!--Create an interactive webpage for Hospital Management using different types of
+stylesheets (use inline, internal and external CSS). The webpage should display
+1. Name the website like Apollo
+2. Website name have to be displayed at the top center of the webpage. Apply some
+text effects to the website name.
+3. At the top right corner of the webpage, create a link for Signup/Login. when you
+click this login form has to open.
+4. Display some description about your webpage. Set suitable font, text and color
+properties for the content
+5. Different facilities have to be displayed in table form using images. Apply border
+properties for the table.
+6. Fix an image in the webpage at a particular position. When you scroll the page,
+that image must be visible. When you click the image, it should go to a form
+where you give your personal details like name, address and your personal
+preferences. The form has to display within the webpage itself in the right side.
+The Form has to be displayed within a border.
+7. In the left side of the webpage at a particular part use animation and
+transformations to display the different services that you offer. The images of the
+services have to change at a particular interval.-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home-Apollo</title>
+    <link rel="stylesheet" href="apollo-homestyle.css">
+    <style>
+     
+        .description {
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div>
+
+        <h1 class="Web-name" style="background-color: aqua; font-size: 50px; text-align: center; color: black; border-radius: 25px; padding: 20px;">
+            Apollo
+        </h1>
+        
+        <button class="but-home" style="background-color: aqua; color: black; position: fixed; top: 70px; right: 150px; border-radius: 20px; text-align: center; padding: 5px 30px; border: solid black; cursor: pointer;">
+            Home
+        </button>
+        <button class="but-login" style="background-color: aqua; color: black; position: fixed; top: 70px; right: 30px; border-radius: 20px; text-align: center; padding: 5px 30px; border: solid black; cursor: pointer;">
+            Login
+        </button>
+    </div>
+</header>
+
+
+<div class="description">
+    <p>This is a description of the webpage. It provides various facilities and services.</p>
+</div>
+
+<div id="form" style="position: fixed; top: 50%; right: 50px; transform: translate(0, -50%); border: 4px solid black; padding: 20px;">
+    <h2 style="color:black">Personal Details Form</h2>
+    <form>
+        <label  style="color:black" for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label   style="color:black" for="address">Address:</label><br>
+        <input type="text" id="address" name="address"><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+</body>
+</html>
+
