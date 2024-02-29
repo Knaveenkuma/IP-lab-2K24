@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>Welcome Page</title>
+<script>
+
+  function welcomeUser() {
+    var userName = prompt("Please enter your name:");
+    if (userName !== null && userName !== "") {
+      alert("Welcome, " + userName + "!");
+    }
+  }
+  
+ 
+  function displayCurrentDate() {
+    var currentDate = new Date();
+    var options = { month: 'long', day: 'numeric', year: 'numeric' };
+    var formattedDate = currentDate.toLocaleDateString('en-US', options);
+    document.getElementById("currentDate").textContent = formattedDate;
+  }
+
+
+  function displayLastModifiedDate() {
+    var lastModifiedDate = new Date(document.lastModified);
+    var options = { month: 'long', day: 'numeric', year: 'numeric' };
+    var formattedDate = lastModifiedDate.toLocaleDateString('en-US', options);
+    document.getElementById("lastModifiedDate").textContent = formattedDate;
+  }
+</script>
+</head>
+<body onload="displayCurrentDate(); displayLastModifiedDate();">
+  <h1>Welcome Page</h1>
+  <button onclick="welcomeUser()">Welcome</button>
+  <p id="currentDate"></p>
+  <p>Last modified date: <span id="lastModifiedDate"></span></p>
+</body>
+</html>
