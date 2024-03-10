@@ -1,0 +1,81 @@
+<!-- Ip EX-5.html-->
+<!Doctype html>
+<html lang ='en'>
+    <meta charset="utf-8">
+<head>
+<title>  Form validation</title>
+<style>
+    .form-container {
+    text-align: center;
+  }
+  .form-container label {
+    display: inline-block;
+    width: 100px;
+  }
+  .form-container input {
+    width: 200px; 
+  }
+</style>
+</head>
+<body>
+    <h4>Which car would you like to buy?</h4>
+        <form id="myForm" action="/submit_form " method="post">
+            <label for="option">
+              <input type="radio" name="option" value="option1"> proton
+              <input type="radio" name="option" value="option2"> Honda
+              <input type="radio" name="option" value="option3"> Ferrari
+              <input type="radio" name="option" value="option1">Ford
+              
+            </label>
+            <br>
+              <h4>Which color do you want in your car?</h4>
+             <label for="car_color" > 
+              
+                <select name="car_color" >
+                    
+                    <option value="pink"> Pink</option>
+                    <option value="red"> Red</option>
+                    <option value="Blue"> Blue</option>
+                    <option value="Green"> Green</option>
+                </select><p>Other <input type="text" name="car_color" ></p><br>
+              
+                
+            </label>  
+            
+            <b>Enter other specification for your prefered car</b>
+                <label for="paragraph">
+                <textarea id="myform" name="paragraph" rows="6" cols="50" required></textarea><br>
+                
+            </label><br>
+
+            <b> Tell us how to get in touch with you</b><br><br>
+
+            <div class="form-container">
+                <label for="fname" class="f_name">Name:</label>
+                <input type="text" id="fname" name="fname">
+                <br><br>
+                <label for="phno" class="ph_no">Phone no:</label>
+                <input type="text" id="phno" name="phno">
+                <br><br>
+                <label for="m_id" class="mail_id">Email id:</label>
+                <input type="text" id="m_id" name="m_id">
+                <br><br>
+                
+              </div>
+              <div class="centered">
+                <input type="checkbox" id="check_b">
+                <label for="check_b"><b>Please contact me as soon as possible</b></label>
+              </div><br>
+              <div>
+                <p>My mail: <a href="mailto:naveenkarthik26042005@gmail.com">naveenkarthik26042005@gmail.com</a></p>
+              </div>
+              
+              <button type="button" onclick="validateInputs()">Submit</button><br><br>
+
+          
+          </form>
+        
+          <script src="IP EX-5.js"></script>
+
+</body> 
+</html>
