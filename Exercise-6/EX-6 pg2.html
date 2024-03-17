@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Count</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        #countButton{
+            background-color: red;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+        }
+        #wordCount{
+            background-color: rgb(255, 255, 255);
+           font-size: larger;
+           
+        }
+    </style>
+</head>
+<body>
+<div>
+    <input type="text" id="inputString" placeholder="Enter your text">
+    <button id="countButton">Count Words</button>
+    <div id="wordCount"></div>
+</div>
+<script >
+    $(document).ready(function(){
+    $('#countButton').click(function(){
+        var inputString = $('#inputString').val().trim();
+        if(inputString === "") {
+            $('#wordCount').text("Please enter a string.").css('color', 'red');
+        } else {
+          var wordsArray = inputString.split(/\s+/);
+          var wordCount = wordsArray.length;
+          $('#wordCount').text("Word count: " + wordCount).css('color', 'rgb(255, 0, 247)');
+        }
+    });
+});
+</script>
+</body>
+</html>
+
