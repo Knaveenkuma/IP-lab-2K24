@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Input Field Example</title>
+<style>
+    #submitButton {
+    background-color: red;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+}
+#outputParagraph{
+    background-color: rgb(255, 255, 255);
+            color:rgb(170, 0, 255);
+            font-size: larger;
+            
+}
+
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#submitButton").click(function(){
+        var inputValue = $("#inputField").val();
+        if(inputValue.trim() === "") {
+            $("#errorDiv").text("Input field cannot be empty.");
+            $("#outputParagraph").empty();
+        } else {
+            $("#errorDiv").empty();
+            $("#outputParagraph").text("Input value: " + inputValue);
+        }
+    });
+});
+
+</script>
+</head>
+<body>
+    <input type="text" id="inputField">
+    <button id="submitButton">Submit</button>
+    <div id="errorDiv" style="color: red;"></div>
+    <p id="outputParagraph"></p>
+</body>
+</html>
