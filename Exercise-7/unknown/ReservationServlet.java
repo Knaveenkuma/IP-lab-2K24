@@ -21,17 +21,17 @@ public class ReservationServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        // Retrieve user input
+     
         String name = request.getParameter("name");
         String seatsStr = request.getParameter("seats");
 
-        // Validate user input
+       
         if (name == null || name.trim().isEmpty() || seatsStr == null || seatsStr.trim().isEmpty()) {
             response.sendRedirect("error.html");
             return;
         }
 
-        // Parse seats to integer
+       
         int seats;
         try {
             seats = Integer.parseInt(seatsStr);
@@ -40,23 +40,22 @@ public class ReservationServlet extends HttpServlet {
             return;
         }
 
-        // Get session object
+        
         HttpSession session = request.getSession(true);
 
-        // Retrieve reserved seats map from session
+        
         HashMap<String, Integer> reservedSeats = (HashMap<String, Integer>) session.getAttribute("reservedSeats");
 
         if (reservedSeats == null) {
             reservedSeats = new HashMap<>();
         }
 
-        // Update reserved seats map with new reservation
+       
         reservedSeats.put(name, seats);
 
-        // Update session attribute
         session.setAttribute("reservedSeats", reservedSeats);
 
-        // Display available and reserved seats
+       
         try (PrintWriter out = response.getWriter()) {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
