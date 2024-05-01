@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Table</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+
+
+$(document).ready(function(){
+  $.ajax({
+    type: "GET",
+    url: "products.xml",
+    dataType: "xml",
+    success: function(xml){
+      $(xml).find('product').each(function(){
+        var name = $(this).find('name').text();
+        var description = $(this).find('description').text();
+        var price = $(this).find('price').text();
+        var imageURL = $(this).find('imageURL').text();
+
+        price = price.replace('$', '₹');
+        var row = "<tr><td>" + name + "</td><td>" + description + "</td><td>" + price + "</td></tr>";
+        $('#productTable tbody').append(row);
+      });
+    }
+  });
+ 
+  $('#productTable').on('click', 'tr', function(){
+    var name = $(this).find('td:first').text();
+    var description = $(this).find('td:nth-child(2)').text();
+    var price = $(this).find('td:nth-child(3)').text();
+    var imageURL = $(this).find('td:nth-child(4)').text(); 
+    $('#productName').text(name);
+    $('#productDescription').text(description);
+    $('#productPrice').text(price);
+    $('#productImage').attr('src', imageURL);
+    $('#productModal').modal('show');
+  });
+});
+
+</script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Product Table</h2>
+  <table id="productTable" class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+<div class="modal" id="productModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Product Details</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Name:</strong> <span id="productName"></span></p>
+        <p><strong>Description:</strong> <span id="productDescription"></span></p>
+        <p><strong>Price:</strong> <span id="productPrice"></span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

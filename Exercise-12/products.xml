@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+  <product>
+    <name>Bags</name>
+    <description>Roshan bags</description>
+    <price>$1000</price>
+    
+  </product>
+  <product>
+    <name>Watch</name>
+    <description>Titan watches</description>
+    <price>$2000</price>
+   
+  </product>
+  <product>
+    <name>Shoes</name>
+    <description>Nike Shoes</description>
+    <price>$3000</price>
+   
+  </product>
+  <product>
+    <name>Sunglasses</name>
+    <description>John jacobs Sunglasses</description>
+    <price>$4000</price>
+    
+  </product>
+</products>
+
+
