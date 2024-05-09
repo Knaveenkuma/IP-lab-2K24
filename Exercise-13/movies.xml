@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="movies.xsl"?>
+
+
+<movies>
+    <movie>
+        <title>American psycho</title>
+        <director>Mary Harron</director>
+        <genre>Crime, Drama</genre>
+        <year>1998</year>
+        <rating>9.3</rating>
+        <available>yes</available>
+    </movie>
+    <movie>
+        <title>The Prestige</title>
+        <director>Christopher Nolan</director>
+        <genre>Crime, Drama</genre>
+        <year>2006</year>
+        <rating>9.2</rating>
+        <available>yes</available>
+    </movie>
+    <movie>
+        <title>Bladerunner 2049</title>
+        <director>Dennnis villuenueve</director>
+        <genre>Action, Crime, Drama</genre>
+        <year>2018</year>
+        <rating>9.0</rating>
+        <available>yes</available>
+    </movie>
+    <movie>
+        <title>La La Land</title>
+        <director>Damien chazelle</director>
+        <genre>Romance, Drama</genre>
+        <year>2016</year>
+        <rating>8.9</rating>
+        <available>yes</available>
+    </movie>
+    <movie>
+        <title>Fight club</title>
+        <director>David fincher</director>
+        <genre>Crime, Drama</genre>
+        <year>1999</year>
+        <rating>8.8</rating>
+        <available>yes</available>
+    </movie>
+</movies>
+
